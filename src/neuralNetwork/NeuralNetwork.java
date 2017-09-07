@@ -110,7 +110,7 @@ public class NeuralNetwork
 				cWeight = 0;
 			}
 		}
-		
+				
 		return outputs;
 	}
 
