@@ -75,9 +75,10 @@ public class Main
 			while (newCreatures.size() < populationSize)
 			{
 				ArrayList<Creature> parents = rouletteWheelSelection();
-				Creature childCreature = GenomeUtils.crossover(parents.get(0), parents.get(1));
+				ArrayList<Creature> children = GenomeUtils.crossover(parents.get(0), parents.get(1));
 				
-				newCreatures.add(childCreature);
+				newCreatures.add(children.get(0));
+				newCreatures.add(children.get(1));
 			}
 			
 			creatures.clear();			
@@ -105,11 +106,10 @@ public class Main
 				while (newCreatures.size() < populationSize - creatures.size())
 				{
 					ArrayList<Creature> parents = rouletteWheelSelection();
-					Creature childCreature = GenomeUtils.crossover(parents.get(0), parents.get(1));
-					Creature secondChildCreature = GenomeUtils.crossover(parents.get(1), parents.get(0));
+					ArrayList<Creature> children = GenomeUtils.crossover(parents.get(0), parents.get(1));
 					
-					newCreatures.add(childCreature);
-					newCreatures.add(secondChildCreature);
+					newCreatures.add(children.get(0));
+					newCreatures.add(children.get(1));
 				}
 				
 				creatures.addAll(newCreatures);
